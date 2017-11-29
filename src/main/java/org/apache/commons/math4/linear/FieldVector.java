@@ -223,6 +223,9 @@ public interface FieldVector<T extends FieldElement<T>>  {
      * @throws OutOfRangeException if the index is not valid.
      * @see #setEntry(int, FieldElement)
      */
+    /*@ requires index >= 0;
+     * requires index < getDimension();
+     @*/
     T getEntry(int index) throws OutOfRangeException;
 
     /**
@@ -238,6 +241,8 @@ public interface FieldVector<T extends FieldElement<T>>  {
      * Returns the size of the vector.
      * @return size
      */
+    /*@ requires true;
+    @*/
     int getDimension();
 
     /**

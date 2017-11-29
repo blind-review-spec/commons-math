@@ -403,6 +403,11 @@ public interface FieldMatrix<T extends FieldElement<T>> extends AnyMatrix {
      * @return matrix entry in row,column
      * @throws OutOfRangeException if the row or column index is not valid.
      */
+    /*@ requires row >= 0;
+     * requires row < getRowDimension();
+     * requires column >= 0;
+     * requires column < getColumnDimension();
+     @*/
     T getEntry(int row, int column) throws OutOfRangeException;
 
     /**
@@ -414,6 +419,11 @@ public interface FieldMatrix<T extends FieldElement<T>> extends AnyMatrix {
      * @throws OutOfRangeException if the row or column index is not valid.
      * @since 2.0
      */
+    /*@ requires row >= 0;
+     * requires row < getRowDimension();
+     * requires column >= 0;
+     * requires column < getColumnDimension();
+     @*/
     void setEntry(int row, int column, T value) throws OutOfRangeException;
 
     /**

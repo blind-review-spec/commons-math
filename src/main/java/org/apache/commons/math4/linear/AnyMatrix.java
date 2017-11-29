@@ -35,6 +35,8 @@ public interface AnyMatrix {
      *
      * @return rowDimension
      */
+    /*@ requires true;
+    @*/
     int getRowDimension();
 
     /**
@@ -42,6 +44,8 @@ public interface AnyMatrix {
      *
      * @return columnDimension
      */
+    /*@ requires true;
+    @*/
     int getColumnDimension();
 
 }
